@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>has</title>
+    </head>
+    <body>
+        <div class="a1-parent">
+            <div class="a1">A1</div>
+        </div>
+        <div class="a2-parent">
+            <div class="a2">A2</div>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            $("div").has(".a1").css("background", "red");   // a1-parent的背景色(選裡面包含a1元素，所以是外層)
+        </script>
+    </body>
+</html>

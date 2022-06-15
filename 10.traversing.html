@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>traversing</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <table class="table table-bordered">
+                    <tr>
+                        <td>td1</td>
+                        <td>td2</td>
+                        <td>td3</td>
+                        <td>td4</td>
+                        <td>td5</td>
+                    </tr>
+                    <tr>
+                        <td>td1</td>
+                        <td>td2</td>
+                        <td><h3>td3</h3></td>
+                        <td>td4</td>
+                        <td>td5</td>
+                    </tr>
+                    <tr>
+                        <td>td1</td>
+                        <td>td2</td>
+                        <td>td3</td>
+                        <td>td4</td>
+                        <td>td5</td>
+                    </tr>
+                    <tr>
+                        <td>td1</td>
+                        <td>td2</td>
+                        <td>td3</td>
+                        <td>td4</td>
+                        <td><h2>td5</h2></td>
+                    </tr>
+                    <tr>
+                        <td>td1</td>
+                        <td>td2</td>
+                        <td>td3</td>
+                        <td>td4</td>
+                        <td>td5</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+
+            // 遍歷
+
+
+
+            // $("td:eq(0)").css("background", "red");  // 只選到1個是25個裡面的第0個
+            // $("td").eq(0).css("background", "red");  // 一口氣選到25個，裡面的第0個
+
+            // $("td:even").css("background", "yellow");
+
+            // 可以串在一起使用
+
+            $("td").css("background", "red")            // 全選變紅色 -> 奇數改黃色 -> 第0人改綠色
+                .even().css("background", "yellow")
+                .eq(0).css("background", "green");
+
+
+            // .even().css("background", "yellow");
+
+            // $("td:last").css("background", "yellow");
+            // $("td:gt(-2)").css("background", "yellow");
+            // $(":header").css("background", "yellow");
+        </script>
+    </body>
+</html>

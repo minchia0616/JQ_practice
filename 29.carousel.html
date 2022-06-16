@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link
+            rel="stylesheet"
+            href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+            integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+            crossorigin="anonymous"
+        />
+        <style>
+            .wrap {
+                width: 800px;
+                height: 400px;
+                overflow: hidden;
+                position: relative;
+            }
+            ul.train {
+                list-style: none;
+                padding: 0;
+                display: flex;
+                width: 500%;
+                transform: translateX(-0px);
+                transition: 0.5s ease;
+            }
+
+            .train li {
+                flex-basis: 0;
+                flex-grow: 1;
+            }
+
+            .train li img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .slider-dots-area {
+                list-style: none;
+                padding: 0;
+                /* margin: 0; */
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                position: absolute;
+                bottom: 0;
+                gap: 0 5px;
+            }
+
+            .slider-dots-area li {
+                width: 15px;
+                height: 15px;
+                border-radius: 50%;
+                border: 1px solid #fff;
+                /* margin: 0 5px; */
+            }
+
+            /* .slider-dots-area li:nth-child(3) {
+                background: #fff;
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            <ul class="train">
+                <li>
+                    <img src="./imgs/slide1.jpg" alt="" />
+                </li>
+                <li>
+                    <img src="./imgs/slide2.jpg" alt="" />
+                </li>
+                <li>
+                    <img src="./imgs/slide3.jpg" alt="" />
+                </li>
+                <li>
+                    <img src="./imgs/slide4.jpg" alt="" />
+                </li>
+                <li>
+                    <img src="./imgs/slide5.jpg" alt="" />
+                </li>
+            </ul>
+
+            <ul class="slider-dots-area">
+                <li style="background: #FFF;"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+
+            $(".slider-dots-area li").click(function(){
+                // console.log(1,$(this).index());
+
+                $(this).css("background","#fff");
+                $(this).siblings().css("background","");
+                
+
+                const length = $(this).index()*-800 +"px";
+                $(".train").css("transform",`translateX(${length})`)
+
+            });
+
+
+
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>on3</title>
+        <style>
+            .box {
+                width: 200px;
+                height: 200px;
+                background-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="showAction"></h1>
+        <div class="box"></div>
+
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            // 多個事件綁同一個動作
+            $(".box").on("click mouseenter mouseleave", function () {
+                //do something
+                console.log("do something");
+            });
+
+
+
+            // ========================== 另一種寫法 ============================
+
+            const abc = function () {
+                console.log("do something");
+            };
+
+            $(".box").on("click mouseenter mouseleave", abc);
+
+        </script>
+    </body>
+</html>
